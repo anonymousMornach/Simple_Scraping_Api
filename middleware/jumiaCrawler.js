@@ -8,7 +8,12 @@ const jumiaCrawler = async (query) => {
     headless: false,
     defaultViewport: null,
   }); */
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    executablePath:
+      process.env.NODE_ENV === "production"
+        ? process.env.PUPPETEER_EXECUTABLE_PATH
+        : puppeteer.executablePath(),
+  });
 
   // Open a new page
   const page = await browser.newPage();
