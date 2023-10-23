@@ -9,12 +9,12 @@ const jumiaCrawler = async (query) => {
     defaultViewport: null,
   }); */
   const browser = await puppeteer.launch({
-    args:[
+    args: [
       "--diasable-setuid-sandbox",
       "--no-sandbox",
       "--single-process",
-      "--no-zygote"
-    ]
+      "--no-zygote",
+    ],
     executablePath:
       process.env.NODE_ENV === "production"
         ? process.env.PUPPETEER_EXECUTABLE_PATH
