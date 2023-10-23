@@ -1,4 +1,8 @@
 # syntax=docker/dockerfile:1
+FROM ghcr.io/puppeteer/puppeteer:21.4.0.
+
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = true\
+    PUPPETEER_EXECUTABLE_CHROMIUM_PATH =/usr/bin/google-chrome
 
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Dockerfile reference guide at
